@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+/* Custom Scrollbar for Textarea & Editor */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #cbd5e1; /* slate-300 */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #64748b; /* slate-500 */
+  border-radius: 6px;
+  border: 2px solid #cbd5e1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #475569; /* slate-600 */
+}
+
+/* Firefox scrollbar support */
+.custom-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #64748b #cbd5e1;
+}
