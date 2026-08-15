@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Typst Document Generator & Dual-Engine PDF Exporter",
-  description: "Convert text or Typst code and export PDF via WebAssembly or Typst CLI engine.",
+  title: "Generátor dokumentů Typst & Export do PDF",
+  description: "Převod textu nebo kódu Typst a export do PDF pomocí nástroje Typst CLI.",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="cs" className="dark">
       <body className="bg-slate-950 text-slate-100 antialiased min-h-screen">
         {children}
       </body>
