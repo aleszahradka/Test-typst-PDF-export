@@ -19,7 +19,7 @@ export default function HomePage() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
   // Stažení zdrojového souboru .typ
@@ -62,9 +62,8 @@ export default function HomePage() {
       }
 
       const pdfBlob = await response.blob();
-      const pdfUrl = URL.createObjectURL(pdfBlob);
-      window.open(pdfUrl, '_blank');
-      setSuccessMessage('PDF bylo úspěšně zkompilováno a otevřeno v novém okně!');
+      downloadFile(pdfBlob, 'document-cli.pdf');
+      setSuccessMessage('PDF bylo úspěšně zkompilováno a staženo!');
       setTimeout(() => setSuccessMessage(null), 5000);
     } catch (err) {
       const error = err as Error;
