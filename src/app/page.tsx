@@ -62,8 +62,9 @@ export default function HomePage() {
       }
 
       const pdfBlob = await response.blob();
-      downloadFile(pdfBlob, 'document-cli.pdf');
-      setSuccessMessage('PDF bylo úspěšně zkompilováno a staženo!');
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      window.open(pdfUrl, '_blank');
+      setSuccessMessage('PDF bylo úspěšně zkompilováno a otevřeno v novém okně!');
       setTimeout(() => setSuccessMessage(null), 5000);
     } catch (err) {
       const error = err as Error;
